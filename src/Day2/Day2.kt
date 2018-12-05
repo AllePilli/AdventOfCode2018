@@ -5,7 +5,7 @@ import charDifference
 import frequency
 import removeDifferences
 
-class Day2{
+class Day2{ /** https://adventofcode.com/2018/day/2 **/
     companion object {
         fun part1(path: String): Int{
             var totalTwos = 0

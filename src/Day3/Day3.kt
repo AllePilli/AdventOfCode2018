@@ -2,7 +2,7 @@ package Day3
 
 import Functions.Companion.readlines
 
-class Day3{
+class Day3{/** https://adventofcode.com/2018/day/3 **/
     companion object {
         fun part1(path: String): Int{
             val claims = readlines("$path\\Day3\\input.txt").map { Claim.parse(it) }
