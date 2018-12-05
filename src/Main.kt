@@ -11,5 +11,5 @@ fun main(args: Array<String>){
     println("Day2:\t${Day2.part1(path)}\t|\t${Day2.part2(path)}")
     println("Day3:\t${Day3.part1(path)}\t|\t${Day3.part2(path)}")
     println("Day4:\t${Day4.part1(path)}\t|\t${Day4.part2(path)}")
-    println("Day5:\t${Day5.part1(path)}\t|\t${Day5.part2(path)}")
+    //println("Day5:\t${Day5.part1(path)}\t|\t${Day5.part2(path)}")
 }

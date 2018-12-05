@@ -4,10 +4,23 @@ import Functions.Companion.readlines
 
 class Day5{
     companion object {
-        fun part1(path: String) = react(readlines(path)[0]).length
+        fun part1(path: String) = react(readlines("$path\\Day5\\input.txt")[0]).length
 
-        fun part2(path: String){
+        fun part2(path: String): Int{
+            val polymer = readlines("$path\\Day5\\input.txt")[0]
+            val lenList = mutableListOf<Int>()
+            for (c in 'a'..'z'){
+                var poly = polymer
+                val regLower = Regex("$c")
+                val regUpper = Regex("${c.toUpperCase()}")
 
+                poly = regLower.replace(poly, "")
+                poly = regUpper.replace(poly, "")
+
+                lenList.add(react(poly).length)
+            }
+
+            return lenList.min()!!
         }
 
         private fun react(polymer: String): String{
