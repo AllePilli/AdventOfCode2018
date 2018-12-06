@@ -33,8 +33,19 @@ class Day6{/** https://adventofcode.com/2018/day/6 **/
             return -1
         }
 
-        fun part2(path: String){
+        fun part2(path: String): Int{
+            val coordinates = readlines("$path\\Day6\\input.txt").map { l -> Pair(l.split(", ")[0].toInt(), l.split(", ")[1].toInt()) }
+            val limit = 10_000
+            val center = Pair(coordinates.map { it.first }.average().toInt(), coordinates.map { it.second }.average().toInt())
+            var area = 0
 
+            (center.first - limit - 1 .. center.first + limit + 1).forEach { x ->
+                (center.second - limit - 1 .. center.second + limit + 1).forEach { y ->
+                    if (coordinates.sumBy { manhattanDist(it, Pair(x, y)) } < 10_000) area++
+                }
+            }
+
+            return area
         }
 
         private fun calcAreas(areas: MutableMap<Int, Int>, grid: MutableMap<Pair<Int, Int>, Int?>, coordinates: List<Pair<Int, Int>>){
